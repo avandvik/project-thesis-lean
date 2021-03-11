@@ -1,0 +1,40 @@
+{
+  "fleet": {
+    "PSV_1": {
+      "id": 1,
+      "capacity": 1000.0
+    },
+    "PSV_2": {
+      "id": 2,
+      "capacity": 1000.0
+    },
+    "PSV_3": {
+      "id": 3,
+      "capacity": 1000.0
+    },
+    "PSV_4": {
+      "id": 4,
+      "capacity": 1000.0
+    },
+    "PSV_5": {
+      "id": 5,
+      "capacity": 1000.0
+    },
+    "SPOT": {
+      "id": 6,
+      "capacity": 1000.0
+    }
+  },
+  "min_speed": 7.0,
+  "design_speed": 12.0,
+  "max_speed": 14.0,
+  "fc_design_speed": 600.0,
+  "fc_depot": 45.0,
+  "fc_idling": 120.0,
+  "fc_servicing": 170.0,
+  "fuel_price": 0.276,
+  "spot_hour_rate": 608.0,
+  "real_service_time_per_unit": 0.1,
+  "preparation_end_hour": 16,
+  "square_meters_in_one_cargo_unit": 8.0
+}

@@ -1,0 +1,226 @@
+{
+  "OFFSHORE": {
+    "id": 0,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.8621,
+    "longitude": 4.7126,
+    "typical_demand": 0.0
+  },
+  "TRO": {
+    "id": 1,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.6456,
+    "longitude": 3.7264,
+    "typical_demand": 100.0
+  },
+  "TRB": {
+    "id": 2,
+    "opening_hour": 7,
+    "closing_hour": 19,
+    "latitude": 60.77,
+    "longitude": 3.50,
+    "typical_demand": 100.0
+  },
+  "TRC": {
+    "id": 3,
+    "opening_hour": 7,
+    "closing_hour": 19,
+    "latitude": 60.88,
+    "longitude": 3.60,
+    "typical_demand": 100.0
+  },
+  "CPR": {
+    "id": 4,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.74,
+    "longitude": 3.61,
+    "typical_demand": 100.0
+  },
+  "SEN": {
+    "id": 5,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.95,
+    "longitude": 3.58,
+    "typical_demand": 100.0
+  },
+  "SDO": {
+    "id": 6,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.85,
+    "longitude": 3.62,
+    "typical_demand": 100.0
+  },
+  "SEQ": {
+    "id": 7,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.89,
+    "longitude": 3.67,
+    "typical_demand": 100.0
+  },
+  "OSE": {
+    "id": 8,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.48,
+    "longitude": 2.82,
+    "typical_demand": 100.0
+  },
+  "OSB": {
+    "id": 9,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.48,
+    "longitude": 2.82,
+    "typical_demand": 100.0
+  },
+  "OSC": {
+    "id": 10,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.60,
+    "longitude": 2.77,
+    "typical_demand": 100.0
+  },
+  "OSO": {
+    "id": 11,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.70,
+    "longitude": 2.93,
+    "typical_demand": 100.0
+  },
+  "SSC": {
+    "id": 12,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.70,
+    "longitude": 2.93,
+    "typical_demand": 100.0
+  },
+  "OSS": {
+    "id": 13,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.38,
+    "longitude": 2.79,
+    "typical_demand": 100.0
+  },
+  "DSD": {
+    "id": 14,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.08,
+    "longitude": 2.63,
+    "typical_demand": 100.0
+  },
+  "KVB": {
+    "id": 15,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 61.07,
+    "longitude": 2.50,
+    "typical_demand": 100.0
+  },
+  "VMO": {
+    "id": 16,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 61.04,
+    "longitude": 2.34,
+    "typical_demand": 100.0
+  },
+  "WEL": {
+    "id": 17,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 61.04,
+    "longitude": 2.34,
+    "typical_demand": 100.0
+  },
+  "VFB": {
+    "id": 18,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.78,
+    "longitude": 2.89,
+    "typical_demand": 100.0
+  },
+  "WEP": {
+    "id": 19,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.85,
+    "longitude": 2.65,
+    "typical_demand": 100.0
+  },
+  "HUL": {
+    "id": 20,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.85,
+    "longitude": 2.65,
+    "typical_demand": 100.0
+  },
+  "STA": {
+    "id": 21,
+    "opening_hour": 7,
+    "closing_hour": 19,
+    "latitude": 61.25,
+    "longitude": 1.85,
+    "typical_demand": 100.0
+  },
+  "STB": {
+    "id": 22,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 61.20,
+    "longitude": 1.82,
+    "typical_demand": 100.0
+  },
+  "STC": {
+    "id": 23,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 61.29,
+    "longitude": 1.90,
+    "typical_demand": 100.0
+  },
+  "GFA": {
+    "id": 24,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 61.17,
+    "longitude": 2.18,
+    "typical_demand": 100.0
+  },
+  "GFB": {
+    "id": 25,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 61.20,
+    "longitude": 2.20,
+    "typical_demand": 100.0
+  },
+  "GFC": {
+    "id": 26,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 61.20,
+    "longitude": 2.27,
+    "typical_demand": 100.0
+  },
+  "SOD": {
+    "id": 27,
+    "opening_hour": 0,
+    "closing_hour": 24,
+    "latitude": 60.90,
+    "longitude": 3.81,
+    "typical_demand": 100.0
+  }
+}
