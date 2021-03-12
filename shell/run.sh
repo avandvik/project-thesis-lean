@@ -8,12 +8,9 @@ mkdir "$current_time"
 cd "$current_time" || exit
 mkdir "logs"
 mkdir "results"
-cd /home/anderhva/project-thesis-lean || exit
+cd /home/anderhva/project-thesis-solstorm || exit
 
-dir_name="$1"
-export dir_name
-
-for file_path in ./input/"$1"/*
+for file_path in ./input/instance/*
 do
 	file_name="$(basename -- "$file_path")"
 	instance_name=${file_name%.*}

@@ -10,7 +10,7 @@ from objects.node import Node
 
 PROJECT_DIR_PATH = f'{pathlib.Path(__file__).parent.absolute()}'  # Path of the root of the project
 
-LOCAL = False
+LOCAL = True
 if LOCAL:
     INSTANCE_NAME = 'example'
     INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
@@ -22,7 +22,10 @@ if LOCAL:
 else:
     INSTANCE_NAME = os.environ.get('instance_name')
     DIR_NAME = os.environ.get('dir_name')
-    INPUT_FILE_PATH = f'{PROJECT_DIR_PATH}/input/{DIR_NAME}/{INSTANCE_NAME}.json'
+    INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
+    INSTALLATIONS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/installations.json'
+    VESSELS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/vessels.json'
+    WEATHER_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/weather.json'
     LOG_OUTPUT_PATH = f'/storage/users/anderhva/{os.environ.get("current_time")}/logs/{INSTANCE_NAME}.log'
     RESULTS_OUTPUT_PATH = f'/storage/users/anderhva/{os.environ.get("current_time")}/results/{INSTANCE_NAME}.json'
 
