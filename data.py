@@ -1,3 +1,4 @@
+import os
 import json
 import math
 import pathlib
@@ -9,13 +10,21 @@ from objects.node import Node
 
 PROJECT_DIR_PATH = f'{pathlib.Path(__file__).parent.absolute()}'  # Path of the root of the project
 
-INSTANCE_NAME = 'example'
-INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
-INSTALLATIONS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/installations.json'
-VESSELS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/vessels.json'
-WEATHER_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/weather.json'
-LOG_OUTPUT_PATH = f'{PROJECT_DIR_PATH}/output/logs/{INSTANCE_NAME}.log'
-RESULTS_OUTPUT_PATH = f'{PROJECT_DIR_PATH}/output/results/{INSTANCE_NAME}.json'
+LOCAL = False
+if LOCAL:
+    INSTANCE_NAME = 'example'
+    INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
+    INSTALLATIONS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/installations.json'
+    VESSELS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/vessels.json'
+    WEATHER_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/weather.json'
+    LOG_OUTPUT_PATH = f'{PROJECT_DIR_PATH}/output/logs/{INSTANCE_NAME}.log'
+    RESULTS_OUTPUT_PATH = f'{PROJECT_DIR_PATH}/output/results/{INSTANCE_NAME}.json'
+else:
+    INSTANCE_NAME = os.environ.get('instance_name')
+    DIR_NAME = os.environ.get('dir_name')
+    INPUT_FILE_PATH = f'{PROJECT_DIR_PATH}/input/{DIR_NAME}/{INSTANCE_NAME}.json'
+    LOG_OUTPUT_PATH = f'/storage/users/anderhva/{os.environ.get("current_time")}/logs/{INSTANCE_NAME}.log'
+    RESULTS_OUTPUT_PATH = f'/storage/users/anderhva/{os.environ.get("current_time")}/results/{INSTANCE_NAME}.json'
 
 VERBOSE = True
 SPEED_OPTIMIZATION = True
@@ -114,11 +123,7 @@ TIME_POINTS_DISC = [tp for tp in range(PERIOD_DISC)]
 TIME_UNIT_DISC = 1.0 / TIME_UNITS_PER_HOUR
 UNIT_SERVICE_TIME_DISC = UNIT_SERVICE_TIME_HOUR * TIME_UNITS_PER_HOUR
 
-MIN_SPEED_DISC = MIN_SPEED * (1 / TIME_UNITS_PER_HOUR)
-
-MAX_DISTANCE_UNIT = MAX_SPEED * TIME_UNIT_DISC
-
-PREPARATION_END_TIME = PREPARATION_END_HOUR * TIME_UNITS_PER_HOUR - 1  # 16 because vessel preparation ends at 16:00
+PREPARATION_END_TIME = PREPARATION_END_HOUR * TIME_UNITS_PER_HOUR - 1
 
 """ ============================ WEATHER ============================ """
 WEATHER_SCENARIO = instance_data['weather_scenario']

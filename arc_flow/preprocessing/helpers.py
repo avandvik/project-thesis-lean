@@ -105,11 +105,7 @@ def calculate_average_max_speed(start_time, distance):
     sailed_distance = 0
     current_time = start_time
     while sailed_distance < distance:
-        try:
-            ws = data.WEATHER_FORECAST_DISC[current_time]
-        except IndexError:
-            print("Current time: " + str(current_time))
-            raise IndexError
+        ws = data.WEATHER_FORECAST_DISC[current_time]
         adjusted_max_speed = data.MAX_SPEED - data.SPEED_IMPACTS[ws]
         sailed_distance += adjusted_max_speed * data.TIME_UNIT_DISC
         current_time += 1
@@ -253,7 +249,7 @@ def calculate_fuel_cost_sailing(start_time, arr_time, speed, distance):
     if distance == 0 or start_time == arr_time:
         return 0
     time_in_each_ws = get_time_in_each_weather_state(start_time, arr_time)
-    distance_in_each_ws = [speed * time_in_each_ws[ws] for ws in range(4)]
+    distance_in_each_ws = [speed * time_in_each_ws[ws] for ws in range(data.WORST_WEATHER_STATE + 1)]
     consumption = get_fuel_consumption(distance_in_each_ws[0] + distance_in_each_ws[1], speed, 0) \
                   + get_fuel_consumption(distance_in_each_ws[2], speed, 2) \
                   + get_fuel_consumption(distance_in_each_ws[3], speed, 3)
@@ -336,4 +332,4 @@ def get_time_in_weather_state(start_time, end_time, weather_state):
         if weather_state == data.WEATHER_FORECAST_DISC[curr_time]:
             time_spent_in_weather_state += 1
         curr_time += 1
-    return disc_to_exact_hours(time_spent_in_weather_state)
+    return time_spent_in_weather_state

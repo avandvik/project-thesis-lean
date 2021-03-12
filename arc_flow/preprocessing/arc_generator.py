@@ -96,7 +96,7 @@ class ArcGenerator:
     def print_arcs(self):
         print(f'Orders: {data.ALL_NODES}')
         counter = 0
-        for start_node in data.ALL_NODES[:-1]:
+        for start_node in data.ALL_NODES[:2]:
             for end_node in data.ALL_NODES[1:]:
                 for start_time in range(data.PREPARATION_END_TIME, data.PERIOD_DISC):
                     for end_time in range(data.PREPARATION_END_TIME, data.PERIOD_DISC):
@@ -150,6 +150,6 @@ class ArcGenerator:
         return self.number_of_arcs
 
 
-# ag = ArcGenerator(verbose=True)
-# ag.generate_arcs()
-# ag.print_arcs()
+ag = ArcGenerator(verbose=True)
+ag.generate_arcs()
+ag.print_arcs()
