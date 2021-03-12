@@ -8,7 +8,7 @@ prepare:
 	. ./shell/prepare.sh
 
 run:
-	./shell/run.sh $(dir_name)
+	./shell/run.sh
 
 install:
 	./shell/install.sh

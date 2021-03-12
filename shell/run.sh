@@ -16,6 +16,5 @@ do
 	instance_name=${file_name%.*}
 	export instance_name
 	echo "Running $instance_name"
-
 	python3 -m arc_flow.mathematical_model.arc_flow_model
 done

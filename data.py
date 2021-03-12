@@ -10,7 +10,10 @@ from objects.node import Node
 
 PROJECT_DIR_PATH = f'{pathlib.Path(__file__).parent.absolute()}'  # Path of the root of the project
 
-LOCAL = True
+VERBOSE = True
+SPEED_OPTIMIZATION = True
+TIME_LIMIT = 60 * 60  # Max run time of gurobi solver
+LOCAL = False
 if LOCAL:
     INSTANCE_NAME = 'example'
     INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
@@ -21,17 +24,12 @@ if LOCAL:
     RESULTS_OUTPUT_PATH = f'{PROJECT_DIR_PATH}/output/results/{INSTANCE_NAME}.json'
 else:
     INSTANCE_NAME = os.environ.get('instance_name')
-    DIR_NAME = os.environ.get('dir_name')
     INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
     INSTALLATIONS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/installations.json'
     VESSELS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/vessels.json'
     WEATHER_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/weather.json'
     LOG_OUTPUT_PATH = f'/storage/users/anderhva/{os.environ.get("current_time")}/logs/{INSTANCE_NAME}.log'
     RESULTS_OUTPUT_PATH = f'/storage/users/anderhva/{os.environ.get("current_time")}/results/{INSTANCE_NAME}.json'
-
-VERBOSE = True
-SPEED_OPTIMIZATION = True
-TIME_LIMIT = 60 * 60  # Max run time of gurobi solver
 
 with open(INSTANCE_FILE_PATH) as file:
     instance_data = json.load(file)
