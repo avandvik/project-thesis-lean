@@ -13,9 +13,9 @@ PROJECT_DIR_PATH = f'{pathlib.Path(__file__).parent.absolute()}'  # Path of the 
 VERBOSE = True
 SPEED_OPTIMIZATION = True
 TIME_LIMIT = 60 * 60  # Max run time of gurobi solver
-LOCAL = False
+LOCAL = True
 if LOCAL:
-    INSTANCE_NAME = 'example'
+    INSTANCE_NAME = 'example_simple'
     INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
     INSTALLATIONS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/installations.json'
     VESSELS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/vessels.json'
@@ -91,13 +91,14 @@ start_depot = Node(index=0, is_order=False, order=None, installation=DEPOT, is_s
 ALL_NODES.append(start_depot)
 
 for idx, order_id in enumerate(instance_data['orders']):
-    installation_idx = instance_data['orders'][order_id]['installation']
+    installation_idx = int(instance_data['orders'][order_id]['installation'])
     installation = INSTALLATIONS[installation_idx]
 
     order = Order(index=idx,
                   transport_type=instance_data['orders'][order_id]['transport'],
                   mandatory=True if instance_data['orders'][order_id]['mandatory'] == 'True' else False,
-                  size=instance_data['orders'][order_id]['size'] / SQM_IN_CARGO_UNIT)
+                  size=math.ceil(instance_data['orders'][order_id]['size'] / SQM_IN_CARGO_UNIT),
+                  installation_id=installation_idx)
 
     node = Node(index=idx + 1, is_order=True, order=order, installation=installation)
 

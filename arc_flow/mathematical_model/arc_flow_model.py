@@ -94,12 +94,6 @@ class ArcFlowModel:
                                                                                      for v in range(len(data.VESSELS))))
                                             for i in data.ALL_NODE_INDICES)
 
-                                +
-
-                                gp.quicksum(self.l_D[v, i] + self.l_P[v, i]
-                                            for v in range(len(data.VESSELS))
-                                            for i in data.ALL_NODE_INDICES)
-
                                 , gp.GRB.MINIMIZE)
 
         self.model.update()
@@ -123,7 +117,7 @@ class ArcFlowModel:
                                                self.sep_arc_costs)
         postponed_orders, serviced_orders = post.find_postponed_orders(voyages)
         fleet_vessels, chartered_vessels = post.find_vessels_used(voyages)
-        bound, fuel_costs, charter_costs, arc_costs, penalty_costs = post.separate_objective(self.model.objVal,
+        bound, fuel_costs, charter_cost, arc_costs, penalty_costs = post.separate_objective(self.model.objVal,
                                                                                              self.model.objBound,
                                                                                              self.model.getVars(),
                                                                                              self.arc_costs, voyages)
@@ -131,16 +125,49 @@ class ArcFlowModel:
         number_of_variables = self.model.NumVars
         number_of_bin_variables = self.model.NumBinVars
         number_of_cont_variables = number_of_variables - number_of_bin_variables
+        
+        print(f'\nOBJECTIVE: {arc_costs + penalty_costs}\n')
+        
+        for vessel in voyages.keys():
+            print(f'Schedule for Vessel {vessel}')
+            from_node = list(voyages[vessel].keys())[0]
+            print(f'\tDepot'
+                  f'\n\t\tLeaves at: 63')
+            end_depot_idx = len(data.ALL_NODES)
+            while from_node < end_depot_idx - 1:
+                info_obj = voyages[vessel][from_node]
+                to_node = data.ALL_NODES[info_obj[0]]
+                time_points = info_obj[1]
+                speed = info_obj[2]
+                fuel_cost = info_obj[4][0]
+                charter_cost = info_obj[4][1]
 
+                if to_node.is_order():
+                    order_name = f'{to_node.get_order()}'
+                    schedule = f'\t\tArrives at: {time_points[1]} ({speed})' \
+                               f'\n\t\tFinished at: {time_points[2]}' \
+                               f'\n\t\tCost: {fuel_cost + charter_cost}'
+                else:
+                    order_name = f'Depot'
+                    schedule = f'\t\t{("Leaves at: " + str(time_points[0])) if from_node == 0 else ("Arrives at: " + str(time_points[2]))}' \
+                               f'\n\t\tCost: {fuel_cost + charter_cost}'
+
+                print(f'\t{order_name}\n{schedule}')
+
+                from_node = info_obj[0]
+
+        """
         if data.VERBOSE:
-            post.print_nodes_and_orders()
             self.model.printAttr('X')
             print(f'Fuel costs: {fuel_costs}')
-            print(f'Charter costs: {charter_costs}')
+            print()
+            print()
+            print(f'Charter costs: {charter_cost}')
             print(f'Arc costs: {arc_costs}')
             print(f'Penalty costs: {self.penalty_costs}')
             print(f'Postponed orders: {postponed_orders}')
-            print(f'Charter costs: {charter_costs}')
+            print(f'Charter costs: {charter_cost}')
+        """
 
         post.save_results(voyages=voyages,
                           postponed_orders=postponed_orders,
@@ -150,7 +177,7 @@ class ArcFlowModel:
                           preprocess_runtime=preprocess_runtime,
                           model_runtime=model_runtime,
                           fuel_costs=fuel_costs,
-                          charter_costs=charter_costs,
+                          charter_costs=charter_cost,
                           penalty_costs=penalty_costs,
                           objective_bound=bound,
                           optimality_gap=optimality_gap,

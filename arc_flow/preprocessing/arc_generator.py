@@ -93,11 +93,11 @@ class ArcGenerator:
         if aet not in self.specific_end_times[v.get_index()][sn.get_index()][en.get_index()][ast]:
             self.specific_end_times[v.get_index()][sn.get_index()][en.get_index()][ast].append(aet)
 
-    def print_arcs(self):
+    def print_arcs(self, start_from, start_to, end_from, end_to):
         print(f'Orders: {data.ALL_NODES}')
         counter = 0
-        for start_node in data.ALL_NODES[:2]:
-            for end_node in data.ALL_NODES[1:]:
+        for start_node in data.ALL_NODES[start_from:start_to]:
+            for end_node in data.ALL_NODES[end_from:end_to]:
                 for start_time in range(data.PREPARATION_END_TIME, data.PERIOD_DISC):
                     for end_time in range(data.PREPARATION_END_TIME, data.PERIOD_DISC):
                         if self.arcs[0][start_node.get_index()][start_time][end_node.get_index()][end_time]:
@@ -105,7 +105,7 @@ class ArcGenerator:
                                 end_time]
                             arc_speed = self.arc_speeds[0][start_node.get_index()][start_time][end_node.get_index()][
                                 end_time]
-                            print(f'{start_node} ({start_time}) -> {end_node} ({end_time}): '
+                            print(f'({start_node}, {start_time}) -> {end_node}, {end_time}): '
                                   f'{round(arc_cost, 4)} {arc_speed}')
                             counter += 1
         print(f'Number of arcs: {counter}')
@@ -150,6 +150,6 @@ class ArcGenerator:
         return self.number_of_arcs
 
 
-ag = ArcGenerator(verbose=True)
-ag.generate_arcs()
-ag.print_arcs()
+# ag = ArcGenerator(verbose=True)
+# ag.generate_arcs()
+# ag.print_arcs(3, 4, 7, 8)

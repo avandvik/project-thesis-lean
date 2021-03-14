@@ -7,3 +7,4 @@ input/run/*
 report/.ipynb_checkpoints/*
 report/.config_ipynb
 .config_ipynb
+output

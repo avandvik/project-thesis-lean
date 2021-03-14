@@ -1,6 +1,6 @@
 class Order:
 
-    def __init__(self, index, transport_type, mandatory, size):
+    def __init__(self, index, transport_type, mandatory, size, installation_id):
         """
         :param index: Unique identifier for the order also servicing as index in the list of orders.
         :param transport_type: Type of transport (delivery or pickup).
@@ -11,6 +11,7 @@ class Order:
         self.transport_type = transport_type
         self.mandatory = mandatory
         self.size = size
+        self.installation_id = installation_id
 
     def is_mandatory(self):
         return self.mandatory
@@ -38,3 +39,13 @@ class Order:
 
     def get_size(self):
         return self.size
+
+    def generate_representation(self):
+        return f'(O{self.index}-{"M" if self.is_mandatory() else "O"}{"D" if self.is_delivery() else "P"}' \
+               f'-I{self.installation_id})'
+
+    def __repr__(self):
+        return self.generate_representation()
+
+    def __str__(self):
+        return self.generate_representation()

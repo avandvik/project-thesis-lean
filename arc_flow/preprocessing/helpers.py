@@ -110,7 +110,7 @@ def calculate_average_max_speed(start_time, distance):
         sailed_distance += adjusted_max_speed * data.TIME_UNIT_DISC
         current_time += 1
     overshoot_time = calculate_overshoot_time(sailed_distance - distance, current_time)
-    return distance / disc_to_exact_hours(current_time - start_time) - overshoot_time
+    return distance / (disc_to_exact_hours(current_time - start_time) - overshoot_time)
 
 
 def calculate_overshoot_time(overshoot_distance, sailing_end_time):

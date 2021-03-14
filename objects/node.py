@@ -31,20 +31,7 @@ class Node:
         return self.index
 
     def generate_representation(self):
-        if self.is_start_depot():
-            return 'START_DEP'
-        elif self.is_end_depot():
-            return 'END_DEP'
-        else:
-            if self.order.is_mandatory_delivery():
-                out_str = 'MD'
-            elif self.order.is_optional_delivery():
-                out_str = 'OD'
-            elif self.order.is_optional_pickup():
-                out_str = 'OP'
-            else:
-                out_str = 'UNKNOWN_NODE'
-            return f'{out_str}_{self.installation.get_name()}'
+        return f'{"Depot" if not self.is_order() else self.order}'
 
     def __str__(self):
         return self.generate_representation()

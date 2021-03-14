@@ -16,7 +16,6 @@ def separate_objective(objective_value, objective_bound, variables, arc_costs, r
     objective_fuel_costs = 0
     objective_charter_costs = 0
     objective_arc_costs = 0
-    objective_load_costs = 0
     for v in variables:
         split_var = v.varName.split('_')
         if v.x > 0.1 and split_var[0] == 'x':
@@ -26,11 +25,9 @@ def separate_objective(objective_value, objective_bound, variables, arc_costs, r
             objective_fuel_costs += routes[vessel][start_node][-1][0]
             objective_charter_costs += routes[vessel][start_node][-1][1]
             objective_arc_costs += arc_costs[vessel][start_node][start_time][end_node][end_time]
-        elif v.x > 0.1 and split_var[0] == 'l':
-            objective_load_costs += v.x
 
-    true_objective = objective_value - objective_load_costs
-    objective_bound = round(objective_bound - objective_load_costs, 4)
+    true_objective = objective_value
+    objective_bound = round(objective_bound, 4)
     objective_fuel_costs = round(objective_fuel_costs, 4)
     objective_charter_costs = round(objective_charter_costs, 4)
     objective_arc_costs = round(objective_arc_costs, 4)
