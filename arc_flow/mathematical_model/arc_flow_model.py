@@ -48,7 +48,7 @@ class ArcFlowModel:
         self.sep_arc_costs = self.ag.get_sep_arc_costs()
         self.arc_arrival_times = self.ag.get_arc_arrival_times()
         self.arc_speeds = self.ag.get_arc_speeds()
-        self.penalty_costs = calculate_penalty_costs(self.arcs, self.arc_costs)
+        self.penalty_costs = calculate_penalty_costs()
 
         self.node_time_points = self.ag.get_node_time_points()
         self.start_nodes = self.ag.get_start_nodes()
@@ -125,8 +125,11 @@ class ArcFlowModel:
         number_of_variables = self.model.NumVars
         number_of_bin_variables = self.model.NumBinVars
         number_of_cont_variables = number_of_variables - number_of_bin_variables
-        
-        print(f'\nOBJECTIVE: {arc_costs + penalty_costs}\n')
+
+        print(f'\nBest objective: {arc_costs + penalty_costs}')
+        print(f'\tFuel costs: {fuel_costs}')
+        print(f'\tPenalty costs: {penalty_costs}')
+        print(f'Postponed orders: {[data.ALL_NODES[node] for node in postponed_orders]}')
         
         for vessel in voyages.keys():
             print(f'Schedule for Vessel {vessel}')

@@ -40,6 +40,9 @@ class Order:
     def get_size(self):
         return self.size
 
+    def get_installation_id(self):
+        return self.installation_id
+
     def generate_representation(self):
         return f'(O{self.index}-{"M" if self.is_mandatory() else "O"}{"D" if self.is_delivery() else "P"}' \
                f'-I{self.installation_id})'

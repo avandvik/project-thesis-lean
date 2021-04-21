@@ -1,38 +1,24 @@
+import math
+
 import data
 
+import arc_flow.preprocessing.distance_calculator as dc
+import arc_flow.preprocessing.helpers as hlp
 
-def calculate_penalty_costs(arcs, arc_costs):
 
-    preparation_end_time = data.PREPARATION_END_TIME
-
-    nodes_to_visit = []
-    for j in data.OPTIONAL_NODE_INDICES:
-        optional_node = data.ALL_NODES[j]
-        inst = optional_node.get_installation()
-        if inst.has_mandatory_order():
-            for idx in data.MANDATORY_NODE_INDICES:
-                visit_node = data.ALL_NODES[idx]
-                if visit_node.get_installation() == inst and visit_node.get_order().is_mandatory():
-                    nodes_to_visit.append((optional_node, visit_node))
-        elif optional_node.get_order().is_pickup() and inst.has_optional_delivery_order():
-            for idx in data.OPTIONAL_NODE_INDICES:
-                visit_node = data.ALL_NODES[idx]
-                if visit_node.get_installation() == inst and visit_node.get_order().is_delivery():
-                    nodes_to_visit.append((optional_node, visit_node))
-        else:
-            nodes_to_visit.append((optional_node, optional_node))
-
+def calculate_penalty_costs():
     penalty_costs = [0 for _ in data.ALL_NODE_INDICES]
 
-    for opt_node, mand_node in nodes_to_visit:
-        service_from_depot_costs = []
-        for t in data.TIME_POINTS_DISC:
-            if arcs[0][0][preparation_end_time][mand_node.get_index()][t]:
-                service_from_depot_costs.append(arc_costs[0][0][preparation_end_time][mand_node.get_index()][t] * 2)
-        worst_cost = max(service_from_depot_costs)
-        best_cost = min(service_from_depot_costs)
-        # avg_cost = sum(service_from_depot_costs) / len(service_from_depot_costs)
-        idx = opt_node.get_index()
-        penalty_costs[idx] = best_cost
+    for order in data.ORDER_NODES:
+        if not order.is_mandatory():
+            installation = data.INSTALLATIONS[order.get_installation_id()]
+            distance = dc.distance(data.DEPOT, installation, 'N')
+            start_time = data.PREPARATION_END_TIME
+            arr_time = start_time + math.floor(hlp.hour_to_disc(distance / data.DESIGN_SPEED))
+            node = data.ALL_NODES[order.get_index() + 1]
+            service_end_time = arr_time + hlp.calculate_service_time(node)
+            sail_cost = hlp.calculate_fuel_cost_sailing(start_time, arr_time, data.DESIGN_SPEED, distance) * 2
+            service_cost = hlp.calculate_fuel_cost_servicing(arr_time, service_end_time)
+            penalty_costs[order.get_index() + 1] = sail_cost + service_cost
 
     return penalty_costs

@@ -13,9 +13,9 @@ PROJECT_DIR_PATH = f'{pathlib.Path(__file__).parent.absolute()}'  # Path of the 
 VERBOSE = True
 SPEED_OPTIMIZATION = True
 TIME_LIMIT = 60 * 60  # Max run time of gurobi solver
-LOCAL = False
+LOCAL = True
 if LOCAL:
-    INSTANCE_NAME = '5-5-1-1'
+    INSTANCE_NAME = '7-7-1-1'
     INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
     INSTALLATIONS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/installations.json'
     VESSELS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/vessels.json'
