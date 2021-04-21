@@ -4,7 +4,7 @@ class Order:
         """
         :param index: Unique identifier for the order also servicing as index in the list of orders.
         :param transport_type: Type of transport (delivery or pickup).
-        :param size: Size of the order (m2 for deck, m3 for bulk).
+        :param size: Size of the order (cargo units).
         :param mandatory: True if order is categorized as mandatory, False if optional.
         """
         self.index = index

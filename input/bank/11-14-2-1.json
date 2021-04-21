@@ -1,0 +1,104 @@
+{
+  "available_vessels": {
+    "PSV_1": {
+      "return_time": 80
+    },
+    "PSV_2": {
+      "return_time": 80
+    },
+    "SPOT": {
+      "return_time": 80
+    }
+  },
+  "discretization_parameter": 4.0,
+  "installation_ordering": "random",
+  "orders": {
+    "0": {
+      "installation": 9,
+      "mandatory": "True",
+      "size": 127.0,
+      "transport": "delivery"
+    },
+    "1": {
+      "installation": 5,
+      "mandatory": "True",
+      "size": 99.0,
+      "transport": "delivery"
+    },
+    "2": {
+      "installation": 21,
+      "mandatory": "True",
+      "size": 224.0,
+      "transport": "delivery"
+    },
+    "3": {
+      "installation": 18,
+      "mandatory": "True",
+      "size": 235.0,
+      "transport": "delivery"
+    },
+    "4": {
+      "installation": 7,
+      "mandatory": "True",
+      "size": 244.0,
+      "transport": "delivery"
+    },
+    "5": {
+      "installation": 19,
+      "mandatory": "True",
+      "size": 243.0,
+      "transport": "delivery"
+    },
+    "6": {
+      "installation": 24,
+      "mandatory": "True",
+      "size": 214.0,
+      "transport": "delivery"
+    },
+    "7": {
+      "installation": 10,
+      "mandatory": "False",
+      "size": 34.0,
+      "transport": "delivery"
+    },
+    "8": {
+      "installation": 4,
+      "mandatory": "False",
+      "size": 104.0,
+      "transport": "delivery"
+    },
+    "9": {
+      "installation": 19,
+      "mandatory": "False",
+      "size": 67.0,
+      "transport": "delivery"
+    },
+    "10": {
+      "installation": 7,
+      "mandatory": "False",
+      "size": 178.0,
+      "transport": "pickup"
+    },
+    "11": {
+      "installation": 21,
+      "mandatory": "False",
+      "size": 97.0,
+      "transport": "pickup"
+    },
+    "12": {
+      "installation": 19,
+      "mandatory": "False",
+      "size": 179.0,
+      "transport": "pickup"
+    },
+    "13": {
+      "installation": 9,
+      "mandatory": "False",
+      "size": 117.0,
+      "transport": "pickup"
+    }
+  },
+  "planning_period_hours": 80.0,
+  "random_seed": 2,
+  "weather_scenario": "perfect"
+}

@@ -1,5 +1,5 @@
 upload-instances:
-	scp -r /Users/andersvandvik/Repositories/project-thesis-lean/input/ anderhva@solstorm-login.iot.ntnu.no:/home/anderhva/project-thesis-solstorm/input/
+	scp -r /Users/andersvandvik/Repositories/project-thesis-lean/input/ anderhva@solstorm-login.iot.ntnu.no:/home/anderhva/project-thesis/input/
 
 upload-project:
 	./shell/upload_project.sh

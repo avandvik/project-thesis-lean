@@ -5,7 +5,9 @@
     "closing_hour": 24,
     "latitude": 60.8621,
     "longitude": 4.7126,
-    "typical_demand": 0.0
+    "std_size_MD": 0.0,
+    "std_size_OD": 0.0,
+    "std_size_OP": 0.0
   },
   "TRO": {
     "id": 1,
@@ -13,7 +15,9 @@
     "closing_hour": 24,
     "latitude": 60.6456,
     "longitude": 3.7264,
-    "typical_demand": 100.0
+    "std_size_MD": 210.0,
+    "std_size_OD": 105.0,
+    "std_size_OP": 220.0
   },
   "TRB": {
     "id": 2,
@@ -21,7 +25,9 @@
     "closing_hour": 19,
     "latitude": 60.77,
     "longitude": 3.50,
-    "typical_demand": 100.0
+    "std_size_MD": 155.0,
+    "std_size_OD": 78.0,
+    "std_size_OP": 163.0
   },
   "TRC": {
     "id": 3,
@@ -29,7 +35,9 @@
     "closing_hour": 19,
     "latitude": 60.88,
     "longitude": 3.60,
-    "typical_demand": 100.0
+    "std_size_MD": 105.0,
+    "std_size_OD": 53.0,
+    "std_size_OP": 110.0
   },
   "CPR": {
     "id": 4,
@@ -37,7 +45,9 @@
     "closing_hour": 24,
     "latitude": 60.74,
     "longitude": 3.61,
-    "typical_demand": 100.0
+    "std_size_MD": 170.0,
+    "std_size_OD": 85.0,
+    "std_size_OP": 179.0
   },
   "SEN": {
     "id": 5,
@@ -45,7 +55,9 @@
     "closing_hour": 24,
     "latitude": 60.95,
     "longitude": 3.58,
-    "typical_demand": 100.0
+    "std_size_MD": 180.0,
+    "std_size_OD": 90.0,
+    "std_size_OP": 189.0
   },
   "SDO": {
     "id": 6,
@@ -53,7 +65,9 @@
     "closing_hour": 24,
     "latitude": 60.85,
     "longitude": 3.62,
-    "typical_demand": 100.0
+    "std_size_MD": 140.0,
+    "std_size_OD": 70.0,
+    "std_size_OP": 147.0
   },
   "SEQ": {
     "id": 7,
@@ -61,7 +75,9 @@
     "closing_hour": 24,
     "latitude": 60.89,
     "longitude": 3.67,
-    "typical_demand": 100.0
+    "std_size_MD": 180.0,
+    "std_size_OD": 90.0,
+    "std_size_OP": 189.0
   },
   "OSE": {
     "id": 8,
@@ -69,7 +85,9 @@
     "closing_hour": 24,
     "latitude": 60.48,
     "longitude": 2.82,
-    "typical_demand": 100.0
+    "std_size_MD": 210.0,
+    "std_size_OD": 105.0,
+    "std_size_OP": 220.0
   },
   "OSB": {
     "id": 9,
@@ -77,7 +95,9 @@
     "closing_hour": 24,
     "latitude": 60.48,
     "longitude": 2.82,
-    "typical_demand": 100.0
+    "std_size_MD": 105.0,
+    "std_size_OD": 53.0,
+    "std_size_OP": 110.0
   },
   "OSC": {
     "id": 10,
@@ -85,7 +105,9 @@
     "closing_hour": 24,
     "latitude": 60.60,
     "longitude": 2.77,
-    "typical_demand": 100.0
+    "std_size_MD": 105.0,
+    "std_size_OD": 53.0,
+    "std_size_OP": 110.0
   },
   "OSO": {
     "id": 11,
@@ -93,7 +115,9 @@
     "closing_hour": 24,
     "latitude": 60.70,
     "longitude": 2.93,
-    "typical_demand": 100.0
+    "std_size_MD": 155.0,
+    "std_size_OD": 78.0,
+    "std_size_OP": 163.0
   },
   "SSC": {
     "id": 12,
@@ -101,7 +125,9 @@
     "closing_hour": 24,
     "latitude": 60.70,
     "longitude": 2.93,
-    "typical_demand": 100.0
+    "std_size_MD": 130.0,
+    "std_size_OD": 65.0,
+    "std_size_OP": 137.0
   },
   "OSS": {
     "id": 13,
@@ -109,7 +135,9 @@
     "closing_hour": 24,
     "latitude": 60.38,
     "longitude": 2.79,
-    "typical_demand": 100.0
+    "std_size_MD": 155.0,
+    "std_size_OD": 78.0,
+    "std_size_OP": 163.0
   },
   "DSD": {
     "id": 14,
@@ -117,7 +145,9 @@
     "closing_hour": 24,
     "latitude": 60.08,
     "longitude": 2.63,
-    "typical_demand": 100.0
+    "std_size_MD": 120.0,
+    "std_size_OD": 60.0,
+    "std_size_OP": 126.0
   },
   "KVB": {
     "id": 15,
@@ -125,7 +155,9 @@
     "closing_hour": 24,
     "latitude": 61.07,
     "longitude": 2.50,
-    "typical_demand": 100.0
+    "std_size_MD": 210.0,
+    "std_size_OD": 105.0,
+    "std_size_OP": 220.0
   },
   "VMO": {
     "id": 16,
@@ -133,7 +165,9 @@
     "closing_hour": 24,
     "latitude": 61.04,
     "longitude": 2.34,
-    "typical_demand": 100.0
+    "std_size_MD": 155.0,
+    "std_size_OD": 78.0,
+    "std_size_OP": 163.0
   },
   "WEL": {
     "id": 17,
@@ -141,7 +175,9 @@
     "closing_hour": 24,
     "latitude": 61.04,
     "longitude": 2.34,
-    "typical_demand": 100.0
+    "std_size_MD": 170.0,
+    "std_size_OD": 85.0,
+    "std_size_OP": 179.0
   },
   "VFB": {
     "id": 18,
@@ -149,7 +185,9 @@
     "closing_hour": 24,
     "latitude": 60.78,
     "longitude": 2.89,
-    "typical_demand": 100.0
+    "std_size_MD": 210.0,
+    "std_size_OD": 105.0,
+    "std_size_OP": 220.0
   },
   "WEP": {
     "id": 19,
@@ -157,7 +195,9 @@
     "closing_hour": 24,
     "latitude": 60.85,
     "longitude": 2.65,
-    "typical_demand": 100.0
+    "std_size_MD": 170.0,
+    "std_size_OD": 85.0,
+    "std_size_OP": 179.0
   },
   "HUL": {
     "id": 20,
@@ -165,7 +205,9 @@
     "closing_hour": 24,
     "latitude": 60.85,
     "longitude": 2.65,
-    "typical_demand": 100.0
+    "std_size_MD": 155.0,
+    "std_size_OD": 78.0,
+    "std_size_OP": 163.0
   },
   "STA": {
     "id": 21,
@@ -173,7 +215,9 @@
     "closing_hour": 19,
     "latitude": 61.25,
     "longitude": 1.85,
-    "typical_demand": 100.0
+    "std_size_MD": 155.0,
+    "std_size_OD": 78.0,
+    "std_size_OP": 163.0
   },
   "STB": {
     "id": 22,
@@ -181,7 +225,9 @@
     "closing_hour": 24,
     "latitude": 61.20,
     "longitude": 1.82,
-    "typical_demand": 100.0
+    "std_size_MD": 155.0,
+    "std_size_OD": 78.0,
+    "std_size_OP": 163.0
   },
   "STC": {
     "id": 23,
@@ -189,7 +235,9 @@
     "closing_hour": 24,
     "latitude": 61.29,
     "longitude": 1.90,
-    "typical_demand": 100.0
+    "std_size_MD": 210.0,
+    "std_size_OD": 105.0,
+    "std_size_OP": 220.0
   },
   "GFA": {
     "id": 24,
@@ -197,7 +245,9 @@
     "closing_hour": 24,
     "latitude": 61.17,
     "longitude": 2.18,
-    "typical_demand": 100.0
+    "std_size_MD": 155.0,
+    "std_size_OD": 78.0,
+    "std_size_OP": 163.0
   },
   "GFB": {
     "id": 25,
@@ -205,7 +255,9 @@
     "closing_hour": 24,
     "latitude": 61.20,
     "longitude": 2.20,
-    "typical_demand": 100.0
+    "std_size_MD": 155.0,
+    "std_size_OD": 78.0,
+    "std_size_OP": 163.0
   },
   "GFC": {
     "id": 26,
@@ -213,7 +265,9 @@
     "closing_hour": 24,
     "latitude": 61.20,
     "longitude": 2.27,
-    "typical_demand": 100.0
+    "std_size_MD": 210.0,
+    "std_size_OD": 105.0,
+    "std_size_OP": 220.0
   },
   "SOD": {
     "id": 27,
@@ -221,6 +275,8 @@
     "closing_hour": 24,
     "latitude": 60.90,
     "longitude": 3.81,
-    "typical_demand": 100.0
+    "std_size_MD": 170.0,
+    "std_size_OD": 85.0,
+    "std_size_OP": 179.0
   }
 }

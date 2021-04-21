@@ -2,27 +2,33 @@
   "fleet": {
     "PSV_1": {
       "id": 1,
-      "capacity": 1000.0
+      "name": "Ocean Star",
+      "capacity": 1048.0
     },
     "PSV_2": {
       "id": 2,
-      "capacity": 1000.0
+      "name": "Havila Foresight",
+      "capacity": 1040.0
     },
     "PSV_3": {
       "id": 3,
+      "name": "Skansi Sjoborg",
       "capacity": 1000.0
     },
     "PSV_4": {
       "id": 4,
-      "capacity": 1000.0
+      "name": "Skandi Mongstad",
+      "capacity": 1024.0
     },
     "PSV_5": {
       "id": 5,
-      "capacity": 1000.0
+      "name": "MV Juanita",
+      "capacity": 1016.0
     },
     "SPOT": {
       "id": 6,
-      "capacity": 1000.0
+      "name": "Energy Swan",
+      "capacity": 1040.0
     }
   },
   "min_speed": 7.0,

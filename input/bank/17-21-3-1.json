@@ -1,0 +1,149 @@
+{
+  "available_vessels": {
+    "PSV_1": {
+      "return_time": 80
+    },
+    "PSV_2": {
+      "return_time": 80
+    },
+    "PSV_3": {
+      "return_time": 80
+    },
+    "SPOT": {
+      "return_time": 80
+    }
+  },
+  "discretization_parameter": 4.0,
+  "installation_ordering": "random",
+  "orders": {
+    "0": {
+      "installation": 11,
+      "mandatory": "True",
+      "size": 254.10000000000002,
+      "transport": "delivery"
+    },
+    "1": {
+      "installation": 25,
+      "mandatory": "True",
+      "size": 167.20000000000002,
+      "transport": "delivery"
+    },
+    "2": {
+      "installation": 3,
+      "mandatory": "True",
+      "size": 169.4,
+      "transport": "delivery"
+    },
+    "3": {
+      "installation": 24,
+      "mandatory": "True",
+      "size": 239.8,
+      "transport": "delivery"
+    },
+    "4": {
+      "installation": 7,
+      "mandatory": "True",
+      "size": 258.5,
+      "transport": "delivery"
+    },
+    "5": {
+      "installation": 14,
+      "mandatory": "True",
+      "size": 107.80000000000001,
+      "transport": "delivery"
+    },
+    "6": {
+      "installation": 21,
+      "mandatory": "True",
+      "size": 231.00000000000003,
+      "transport": "delivery"
+    },
+    "7": {
+      "installation": 16,
+      "mandatory": "True",
+      "size": 206.8,
+      "transport": "delivery"
+    },
+    "8": {
+      "installation": 10,
+      "mandatory": "True",
+      "size": 169.4,
+      "transport": "delivery"
+    },
+    "9": {
+      "installation": 23,
+      "mandatory": "True",
+      "size": 202.4,
+      "transport": "delivery"
+    },
+    "10": {
+      "installation": 26,
+      "mandatory": "False",
+      "size": 66.0,
+      "transport": "delivery"
+    },
+    "11": {
+      "installation": 8,
+      "mandatory": "False",
+      "size": 70.4,
+      "transport": "delivery"
+    },
+    "12": {
+      "installation": 24,
+      "mandatory": "False",
+      "size": 126.50000000000001,
+      "transport": "delivery"
+    },
+    "13": {
+      "installation": 7,
+      "mandatory": "False",
+      "size": 83.60000000000001,
+      "transport": "delivery"
+    },
+    "14": {
+      "installation": 9,
+      "mandatory": "False",
+      "size": 58.300000000000004,
+      "transport": "delivery"
+    },
+    "15": {
+      "installation": 3,
+      "mandatory": "False",
+      "size": 48.400000000000006,
+      "transport": "delivery"
+    },
+    "16": {
+      "installation": 8,
+      "mandatory": "False",
+      "size": 326.70000000000005,
+      "transport": "pickup"
+    },
+    "17": {
+      "installation": 16,
+      "mandatory": "False",
+      "size": 123.20000000000002,
+      "transport": "pickup"
+    },
+    "18": {
+      "installation": 24,
+      "mandatory": "False",
+      "size": 152.9,
+      "transport": "pickup"
+    },
+    "19": {
+      "installation": 9,
+      "mandatory": "False",
+      "size": 172.70000000000002,
+      "transport": "pickup"
+    },
+    "20": {
+      "installation": 12,
+      "mandatory": "False",
+      "size": 75.9,
+      "transport": "pickup"
+    }
+  },
+  "planning_period_hours": 80.0,
+  "random_seed": 2,
+  "weather_scenario": "perfect"
+}

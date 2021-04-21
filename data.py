@@ -15,7 +15,7 @@ SPEED_OPTIMIZATION = True
 TIME_LIMIT = 60 * 60  # Max run time of gurobi solver
 LOCAL = False
 if LOCAL:
-    INSTANCE_NAME = 'example_6'
+    INSTANCE_NAME = '5-5-1-1'
     INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
     INSTALLATIONS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/installations.json'
     VESSELS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/vessels.json'
@@ -73,13 +73,13 @@ SQM_IN_CARGO_UNIT = vessels_data['square_meters_in_one_cargo_unit']
 VESSELS = []
 index = 0
 for vessel_name in vessels_data["fleet"]:
-    is_spot_vessel = True if vessels_data["fleet"][vessel_name] == 'SPOT' else False
+    is_spot_vessel = True if vessel_name == 'SPOT' else False
     if vessel_name in instance_data['available_vessels']:
         return_time = instance_data['available_vessels'][vessel_name]['return_time']
         VESSELS.append(Vessel(index=index,
                               name=vessel_name,
                               return_time=return_time,
-                              capacity=vessels_data["fleet"][vessel_name]['capacity'] / SQM_IN_CARGO_UNIT,
+                              capacity=math.floor(vessels_data["fleet"][vessel_name]['capacity'] / SQM_IN_CARGO_UNIT),
                               is_spot_vessel=is_spot_vessel))
         index += 1
 

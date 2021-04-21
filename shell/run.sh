@@ -8,7 +8,13 @@ mkdir "$current_time"
 cd "$current_time" || exit
 mkdir "logs"
 mkdir "results"
-cd /home/anderhva/project-thesis-solstorm || exit
+cd /home/anderhva/project-thesis || exit
+
+module load Python/3.8.2-GCCcore-9.3.0
+module load gurobi/9.1
+cd "$GUROBI_HOME" || exit
+python setup.py build -b "$HOME"/.cache/gurobipy install --user
+cd /home/anderhva/project-thesis || exit
 
 for file_path in ./input/instance/*
 do
