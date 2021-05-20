@@ -3,38 +3,43 @@
     "PSV_1": {
       "id": 1,
       "name": "Ocean Star",
-      "capacity": 1048.0
+      "capacity": 1048.0,
+      "fc_design_speed": 540.0
     },
     "PSV_2": {
       "id": 2,
       "name": "Havila Foresight",
-      "capacity": 1040.0
+      "capacity": 1040.0,
+      "fc_design_speed": 620.0
     },
     "PSV_3": {
       "id": 3,
       "name": "Skansi Sjoborg",
-      "capacity": 1000.0
+      "capacity": 1000.0,
+      "fc_design_speed": 562.0
     },
     "PSV_4": {
       "id": 4,
       "name": "Skandi Mongstad",
-      "capacity": 1024.0
+      "capacity": 1024.0,
+      "fc_design_speed": 608.0
     },
     "PSV_5": {
       "id": 5,
       "name": "MV Juanita",
-      "capacity": 1016.0
+      "capacity": 1016.0,
+      "fc_design_speed": 540.0
     },
     "SPOT": {
       "id": 6,
       "name": "Energy Swan",
-      "capacity": 1040.0
+      "capacity": 1040.0,
+      "fc_design_speed": 645.0
     }
   },
-  "min_speed": 7.0,
+  "min_speed": 10.0,
   "design_speed": 12.0,
   "max_speed": 14.0,
-  "fc_design_speed": 600.0,
   "fc_depot": 45.0,
   "fc_idling": 120.0,
   "fc_servicing": 170.0,

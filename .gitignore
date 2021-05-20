@@ -2,8 +2,7 @@
 __pycache__
 .DS_Store
 venv
-input/data/*
-input/run/*
+input/instance/*
 report/.ipynb_checkpoints/*
 report/.config_ipynb
 .config_ipynb

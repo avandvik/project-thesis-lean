@@ -13,9 +13,9 @@ PROJECT_DIR_PATH = f'{pathlib.Path(__file__).parent.absolute()}'  # Path of the 
 VERBOSE = True
 SPEED_OPTIMIZATION = True
 TIME_LIMIT = 60 * 60  # Max run time of gurobi solver
-LOCAL = True
+LOCAL = False
 if LOCAL:
-    INSTANCE_NAME = '7-7-1-1'
+    INSTANCE_NAME = '7-8-1-1'
     INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
     INSTALLATIONS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/installations.json'
     VESSELS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/vessels.json'
@@ -62,7 +62,6 @@ SPOT_RATE = vessels_data['spot_hour_rate']
 MIN_SPEED = vessels_data['min_speed']
 MAX_SPEED = vessels_data['max_speed']
 DESIGN_SPEED = vessels_data['design_speed']
-FUEL_CONSUMPTION_DESIGN_SPEED = vessels_data['fc_design_speed']
 FUEL_CONSUMPTION_DEPOT = vessels_data['fc_depot']
 FUEL_CONSUMPTION_IDLING = vessels_data['fc_idling']
 FUEL_CONSUMPTION_SERVICING = vessels_data['fc_servicing']
@@ -72,15 +71,16 @@ SQM_IN_CARGO_UNIT = vessels_data['square_meters_in_one_cargo_unit']
 
 VESSELS = []
 index = 0
-for vessel_name in vessels_data["fleet"]:
+for vessel_name in vessels_data['fleet']:
     is_spot_vessel = True if vessel_name == 'SPOT' else False
     if vessel_name in instance_data['available_vessels']:
         return_time = instance_data['available_vessels'][vessel_name]['return_time']
         VESSELS.append(Vessel(index=index,
                               name=vessel_name,
                               return_time=return_time,
-                              capacity=math.floor(vessels_data["fleet"][vessel_name]['capacity'] / SQM_IN_CARGO_UNIT),
-                              is_spot_vessel=is_spot_vessel))
+                              capacity=math.floor(vessels_data['fleet'][vessel_name]['capacity'] / SQM_IN_CARGO_UNIT),
+                              is_spot_vessel=is_spot_vessel,
+                              fc_design_speed=vessels_data['fleet'][vessel_name]['fc_design_speed']))
         index += 1
 
 """ ============================ ORDERS ============================ """

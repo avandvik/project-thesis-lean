@@ -152,4 +152,4 @@ class ArcGenerator:
 
 # ag = ArcGenerator(verbose=True)
 # ag.generate_arcs()
-# ag.print_arcs(3, 4, 7, 8)
+# ag.print_arcs(0, len(data.ALL_NODES), 0, len(data.ALL_NODES))

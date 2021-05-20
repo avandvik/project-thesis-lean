@@ -1,0 +1,98 @@
+{
+  "available_vessels": {
+    "PSV_1": {
+      "return_time": 80
+    },
+    "PSV_2": {
+      "return_time": 80
+    },
+    "SPOT": {
+      "return_time": 80
+    }
+  },
+  "discretization_parameter": 4.0,
+  "installation_ordering": "random",
+  "orders": {
+    "0": {
+      "installation": 18,
+      "mandatory": "True",
+      "size": 288.0,
+      "transport": "delivery"
+    },
+    "1": {
+      "installation": 8,
+      "mandatory": "True",
+      "size": 150.0,
+      "transport": "delivery"
+    },
+    "2": {
+      "installation": 4,
+      "mandatory": "True",
+      "size": 185.0,
+      "transport": "delivery"
+    },
+    "3": {
+      "installation": 19,
+      "mandatory": "True",
+      "size": 197.0,
+      "transport": "delivery"
+    },
+    "4": {
+      "installation": 24,
+      "mandatory": "True",
+      "size": 80.0,
+      "transport": "delivery"
+    },
+    "5": {
+      "installation": 12,
+      "mandatory": "True",
+      "size": 135.0,
+      "transport": "delivery"
+    },
+    "6": {
+      "installation": 10,
+      "mandatory": "True",
+      "size": 84.0,
+      "transport": "delivery"
+    },
+    "7": {
+      "installation": 20,
+      "mandatory": "False",
+      "size": 92.0,
+      "transport": "delivery"
+    },
+    "8": {
+      "installation": 11,
+      "mandatory": "False",
+      "size": 100.0,
+      "transport": "delivery"
+    },
+    "9": {
+      "installation": 2,
+      "mandatory": "False",
+      "size": 86.0,
+      "transport": "delivery"
+    },
+    "10": {
+      "installation": 9,
+      "mandatory": "False",
+      "size": 57.0,
+      "transport": "pickup"
+    },
+    "11": {
+      "installation": 12,
+      "mandatory": "False",
+      "size": 76.0,
+      "transport": "pickup"
+    },
+    "12": {
+      "installation": 19,
+      "mandatory": "False",
+      "size": 240.0,
+      "transport": "pickup"
+    }
+  },
+  "planning_period_hours": 80.0,
+  "random_seed": 19,
+  "weather_scenario": "perfect"
+}

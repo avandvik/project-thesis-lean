@@ -233,26 +233,26 @@ def is_return_possible(node, arc_end_time, vessel):
 
 
 def calculate_arc_cost(start_time, arr_time, service_time, end_time, speed, distance, vessel):
-    return calculate_total_fuel_cost(start_time, arr_time, service_time, end_time, speed, distance), \
+    return calculate_total_fuel_cost(start_time, arr_time, service_time, end_time, speed, distance, vessel), \
            calculate_charter_cost(vessel, start_time, end_time)
 
 
-def calculate_total_fuel_cost(start_time, arr_time, service_time, end_time, speed, distance):
-    sail_cost = calculate_fuel_cost_sailing(start_time, arr_time, speed, distance)
+def calculate_total_fuel_cost(start_time, arr_time, service_time, end_time, speed, distance, vessel):
+    sail_cost = calculate_fuel_cost_sailing(start_time, arr_time, speed, distance, vessel)
     idle_cost = calculate_fuel_cost_idling(arr_time, service_time)
     service_cost = calculate_fuel_cost_servicing(service_time, end_time)
     total_cost = sail_cost + idle_cost + service_cost
     return total_cost
 
 
-def calculate_fuel_cost_sailing(start_time, arr_time, speed, distance):
+def calculate_fuel_cost_sailing(start_time, arr_time, speed, distance, vessel):
     if distance == 0 or start_time == arr_time:
         return 0
     time_in_each_ws = get_time_in_each_weather_state(start_time, arr_time)
     distance_in_each_ws = [speed * time_in_each_ws[ws] for ws in range(data.WORST_WEATHER_STATE + 1)]
-    consumption = get_fuel_consumption(distance_in_each_ws[0] + distance_in_each_ws[1], speed, 0) \
-                  + get_fuel_consumption(distance_in_each_ws[2], speed, 2) \
-                  + get_fuel_consumption(distance_in_each_ws[3], speed, 3)
+    consumption = get_fuel_consumption(distance_in_each_ws[0] + distance_in_each_ws[1], speed, 0, vessel) \
+                  + get_fuel_consumption(distance_in_each_ws[2], speed, 2, vessel) \
+                  + get_fuel_consumption(distance_in_each_ws[3], speed, 3, vessel)
     return consumption * data.FUEL_PRICE
 
 
@@ -277,9 +277,9 @@ def calculate_charter_cost(vessel, start_time, end_time):
     return data.SPOT_RATE * disc_to_exact_hours(end_time - start_time) if vessel.is_spot_vessel() else 0.0
 
 
-def get_fuel_consumption(distance, speed, weather):
+def get_fuel_consumption(distance, speed, weather, vessel):
     return (distance / (speed - data.SPEED_IMPACTS[weather])) \
-           * data.FUEL_CONSUMPTION_DESIGN_SPEED * math.pow((speed / data.DESIGN_SPEED), 3)
+           * vessel.get_fc_design_speed() * math.pow((speed / data.DESIGN_SPEED), 3)
 
 
 def print_arc_info(start_node, end_node, distance, start_time, early, late, service, checkpoints, verbose):

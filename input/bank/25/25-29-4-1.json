@@ -1,0 +1,200 @@
+{
+  "available_vessels": {
+    "PSV_1": {
+      "return_time": 80
+    },
+    "PSV_2": {
+      "return_time": 80
+    },
+    "PSV_3": {
+      "return_time": 80
+    },
+    "PSV_4": {
+      "return_time": 80
+    },
+    "SPOT": {
+      "return_time": 80
+    }
+  },
+  "discretization_parameter": 4.0,
+  "installation_ordering": "random",
+  "orders": {
+    "0": {
+      "installation": 5,
+      "mandatory": "True",
+      "size": 238.0,
+      "transport": "delivery"
+    },
+    "1": {
+      "installation": 1,
+      "mandatory": "True",
+      "size": 108.0,
+      "transport": "delivery"
+    },
+    "2": {
+      "installation": 8,
+      "mandatory": "True",
+      "size": 311.0,
+      "transport": "delivery"
+    },
+    "3": {
+      "installation": 6,
+      "mandatory": "True",
+      "size": 142.0,
+      "transport": "delivery"
+    },
+    "4": {
+      "installation": 13,
+      "mandatory": "True",
+      "size": 222.0,
+      "transport": "delivery"
+    },
+    "5": {
+      "installation": 21,
+      "mandatory": "True",
+      "size": 207.0,
+      "transport": "delivery"
+    },
+    "6": {
+      "installation": 27,
+      "mandatory": "True",
+      "size": 110.0,
+      "transport": "delivery"
+    },
+    "7": {
+      "installation": 12,
+      "mandatory": "True",
+      "size": 171.0,
+      "transport": "delivery"
+    },
+    "8": {
+      "installation": 14,
+      "mandatory": "True",
+      "size": 175.0,
+      "transport": "delivery"
+    },
+    "9": {
+      "installation": 15,
+      "mandatory": "True",
+      "size": 119.0,
+      "transport": "delivery"
+    },
+    "10": {
+      "installation": 23,
+      "mandatory": "True",
+      "size": 308.0,
+      "transport": "delivery"
+    },
+    "11": {
+      "installation": 11,
+      "mandatory": "True",
+      "size": 195.0,
+      "transport": "delivery"
+    },
+    "12": {
+      "installation": 2,
+      "mandatory": "True",
+      "size": 203.0,
+      "transport": "delivery"
+    },
+    "13": {
+      "installation": 5,
+      "mandatory": "False",
+      "size": 111.0,
+      "transport": "delivery"
+    },
+    "14": {
+      "installation": 19,
+      "mandatory": "False",
+      "size": 51.0,
+      "transport": "delivery"
+    },
+    "15": {
+      "installation": 20,
+      "mandatory": "False",
+      "size": 71.0,
+      "transport": "delivery"
+    },
+    "16": {
+      "installation": 27,
+      "mandatory": "False",
+      "size": 103.0,
+      "transport": "delivery"
+    },
+    "17": {
+      "installation": 17,
+      "mandatory": "False",
+      "size": 56.0,
+      "transport": "delivery"
+    },
+    "18": {
+      "installation": 26,
+      "mandatory": "False",
+      "size": 129.0,
+      "transport": "delivery"
+    },
+    "19": {
+      "installation": 18,
+      "mandatory": "False",
+      "size": 87.0,
+      "transport": "delivery"
+    },
+    "20": {
+      "installation": 22,
+      "mandatory": "False",
+      "size": 61.0,
+      "transport": "delivery"
+    },
+    "21": {
+      "installation": 24,
+      "mandatory": "False",
+      "size": 89.0,
+      "transport": "delivery"
+    },
+    "22": {
+      "installation": 5,
+      "mandatory": "False",
+      "size": 98.0,
+      "transport": "pickup"
+    },
+    "23": {
+      "installation": 13,
+      "mandatory": "False",
+      "size": 60.0,
+      "transport": "pickup"
+    },
+    "24": {
+      "installation": 4,
+      "mandatory": "False",
+      "size": 165.0,
+      "transport": "pickup"
+    },
+    "25": {
+      "installation": 21,
+      "mandatory": "False",
+      "size": 241.0,
+      "transport": "pickup"
+    },
+    "26": {
+      "installation": 26,
+      "mandatory": "False",
+      "size": 133.0,
+      "transport": "pickup"
+    },
+    "27": {
+      "installation": 17,
+      "mandatory": "False",
+      "size": 177.0,
+      "transport": "pickup"
+    },
+    "28": {
+      "installation": 22,
+      "mandatory": "False",
+      "size": 232.0,
+      "transport": "pickup"
+    }
+  },
+  "planning_period_hours": 80.0,
+  "random_seed": 451,
+  "weather_scenario": "perfect"
+}

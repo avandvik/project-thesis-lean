@@ -1,18 +1,12 @@
 class Vessel:
 
-    def __init__(self, index, name, return_time, capacity, is_spot_vessel):
-        """
-        :param index: Unique identifier for the vessel, also serving as index of vessel list in data.py (starts at 0).
-        :param name: Shortened name of the vessel.
-        :param return_time: The hour in the planning horizon (end of planning horizon) the vessel must be back.
-        :param capacity: The capacity (in cargo units) on the vessel's deck.
-        :param is_spot_vessel: True if the vessel is a spot vessel.
-        """
+    def __init__(self, index, name, return_time, capacity, is_spot_vessel, fc_design_speed):
         self.index = index
         self.name = name
         self.return_time = return_time
         self.capacity = capacity
         self._is_spot_vessel = is_spot_vessel
+        self.fc_design_speed = fc_design_speed
 
     def is_spot_vessel(self):
         return self._is_spot_vessel
@@ -25,6 +19,9 @@ class Vessel:
 
     def get_index(self):
         return self.index
+
+    def get_fc_design_speed(self):
+        return self.fc_design_speed
 
     def __str__(self):
         return f'Vessel {self.name}'

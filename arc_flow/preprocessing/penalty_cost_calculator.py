@@ -17,7 +17,8 @@ def calculate_penalty_costs():
             arr_time = start_time + math.floor(hlp.hour_to_disc(distance / data.DESIGN_SPEED))
             node = data.ALL_NODES[order.get_index() + 1]
             service_end_time = arr_time + hlp.calculate_service_time(node)
-            sail_cost = hlp.calculate_fuel_cost_sailing(start_time, arr_time, data.DESIGN_SPEED, distance) * 2
+            fleet_vessel = data.VESSELS[0]
+            sail_cost = hlp.calculate_fuel_cost_sailing(start_time, arr_time, data.DESIGN_SPEED, distance, fleet_vessel) * 2
             service_cost = hlp.calculate_fuel_cost_servicing(arr_time, service_end_time)
             penalty_costs[order.get_index() + 1] = sail_cost + service_cost
 
