@@ -48,7 +48,8 @@ def is_illegal_arc(start_node, end_node):
 
 
 def get_arc_data(start_node, end_node, start_time, vessel):
-    if start_node.get_installation() != end_node.get_installation():
+    distance = dc.distance(start_node.get_installation(), end_node.get_installation(), "N")
+    if start_node.get_installation() != end_node.get_installation() and distance > 0:
         arr_times_to_arc_data, idling = get_intermediate_arc_data(start_node, end_node, start_time, vessel)
     elif start_node.is_start_depot() and end_node.is_end_depot():
         return {start_time: [start_time, start_time, 0, 0, 0]}, False

@@ -15,7 +15,7 @@ SPEED_OPTIMIZATION = True
 TIME_LIMIT = 60 * 60  # Max run time of gurobi solver
 LOCAL = False
 if LOCAL:
-    INSTANCE_NAME = '7-8-1-1'
+    INSTANCE_NAME = '11-12-2-2'
     INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
     INSTALLATIONS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/installations.json'
     VESSELS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/vessels.json'
