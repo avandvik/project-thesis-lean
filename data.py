@@ -15,7 +15,7 @@ SPEED_OPTIMIZATION = True
 TIME_LIMIT = 60 * 60  # Max run time of gurobi solver
 LOCAL = False
 if LOCAL:
-    INSTANCE_NAME = '11-12-2-2'
+    INSTANCE_NAME = '9-10-1-1'
     INSTANCE_FILE_PATH = f'{PROJECT_DIR_PATH}/input/instance/{INSTANCE_NAME}.json'
     INSTALLATIONS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/installations.json'
     VESSELS_FILE_PATH = f'{PROJECT_DIR_PATH}/input/constant/vessels.json'
@@ -118,7 +118,7 @@ PICKUP_NODE_INDICES = [node.get_index() for node in ALL_NODES if node.is_order()
 """ ============================ TIME AND DISCRETIZATION ============================ """
 PERIOD_HOURS = int(instance_data['planning_period_hours'])
 TIME_UNITS_PER_HOUR = int(instance_data['discretization_parameter'])
-TIME_UNITS_24 = TIME_UNITS_PER_HOUR * 24
+TIME_UNITS_24 = TIME_UNITS_PER_HOUR * 24 - 1
 PERIOD_DISC = PERIOD_HOURS * TIME_UNITS_PER_HOUR
 TIME_POINTS_DISC = [tp for tp in range(PERIOD_DISC)]
 

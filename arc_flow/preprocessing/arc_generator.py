@@ -44,6 +44,7 @@ class ArcGenerator:
                         continue
                     for start_time in start_times:
                         arr_times_to_arc_data, idling = hlp.get_arc_data(start_node, end_node, start_time, vessel)
+
                         if not arr_times_to_arc_data:
                             continue
                         self.save_arcs(start_node, end_node, start_time, arr_times_to_arc_data, vessel, idling)
@@ -153,3 +154,4 @@ class ArcGenerator:
 # ag = ArcGenerator(verbose=True)
 # ag.generate_arcs()
 # ag.print_arcs(0, len(data.ALL_NODES), 0, len(data.ALL_NODES), 0)  # Vessel 0
+# ag.print_arcs(4, 5, 10, 11, 0)

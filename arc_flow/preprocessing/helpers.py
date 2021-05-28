@@ -36,8 +36,8 @@ def is_illegal_arc(start_node, end_node):
     if start_node.get_installation() != end_node.get_installation():
         if end_node.get_installation().has_mandatory_order() and end_node.get_order().is_optional():
             return True
-        elif end_node.get_installation().has_optional_delivery_order() and end_node.get_order().is_optional_pickup():
-            return True
+        # elif end_node.get_installation().has_optional_delivery_order() and end_node.get_order().is_optional_pickup():
+            # return True
     else:
         if start_node.get_order().is_optional_delivery():
             if end_node.get_order().is_mandatory_delivery():
@@ -215,21 +215,28 @@ def is_servicing_possible(service_start_time, service_duration, end_node):
     if disc_opening_time != 0 and disc_closing_time != data.TIME_UNITS_24:
         start_daytime = disc_to_disc_daytime(service_start_time)
         end_daytime = disc_to_disc_daytime(service_start_time + service_duration)
-        if start_daytime > disc_closing_time or start_daytime < disc_opening_time or \
-                end_daytime > disc_closing_time or end_daytime < disc_opening_time:
-            installation_open = False
+        installation_open = disc_opening_time <= start_daytime <= disc_closing_time \
+                            and disc_closing_time >= end_daytime >= disc_opening_time \
+                            and start_daytime < end_daytime
+
+        # if start_daytime >= disc_closing_time or start_daytime <= disc_opening_time or \
+        #         end_daytime >= disc_closing_time or end_daytime <= disc_opening_time:
+        #     installation_open = False
     return installation_open and worst_weather < data.WORST_WEATHER_STATE
 
 
 def is_return_possible(node, arc_end_time, vessel):
     distance = dc.distance(node.get_installation(), data.DEPOT, "N")
-    speed_impacts = [data.SPEED_IMPACTS[w] for w in data.WEATHER_FORECAST_DISC[arc_end_time:]]
-    adjusted_max_speeds = [data.MAX_SPEED - speed_impact for speed_impact in speed_impacts]
-    if len(adjusted_max_speeds) == 0:
+    if arc_end_time >= data.PERIOD_DISC - 1 or distance < 0:
         return False
-    avg_max_speed = sum(adjusted_max_speeds) / len(adjusted_max_speeds)
-    earliest_arr_time = arc_end_time + hour_to_disc(distance / avg_max_speed)
-    return_time = vessel.get_hourly_return_time() * data.TIME_UNITS_PER_HOUR - 1
+    # speed_impacts = [data.SPEED_IMPACTS[w] for w in data.WEATHER_FORECAST_DISC[arc_end_time:]]
+    # adjusted_max_speeds = [data.MAX_SPEED - speed_impact for speed_impact in speed_impacts]
+    # if len(adjusted_max_speeds) == 0:
+        # return False
+    #avg_max_speed = sum(adjusted_max_speeds) / len(adjusted_max_speeds)
+    avg_max_speed = calculate_average_max_speed(arc_end_time, distance)
+    earliest_arr_time = arc_end_time + math.ceil(hour_to_disc(distance / avg_max_speed))
+    return_time = vessel.get_hourly_return_time() * data.TIME_UNITS_PER_HOUR
     return earliest_arr_time <= return_time
 
 
