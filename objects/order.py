@@ -1,12 +1,6 @@
 class Order:
 
     def __init__(self, index, transport_type, mandatory, size, installation_id):
-        """
-        :param index: Unique identifier for the order also servicing as index in the list of orders.
-        :param transport_type: Type of transport (delivery or pickup).
-        :param size: Size of the order (cargo units).
-        :param mandatory: True if order is categorized as mandatory, False if optional.
-        """
         self.index = index
         self.transport_type = transport_type
         self.mandatory = mandatory

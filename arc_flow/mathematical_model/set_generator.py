@@ -13,7 +13,6 @@ def generate_node_time_points(nodes):
     return node_time_points
 
 
-# TODO: Generalize all functions below
 def generate_from_orders(arc_costs, node_time_points):
     from_orders = [[[[] for _ in data.TIME_POINTS_DISC] for _ in data.ALL_NODES] for _ in data.VESSELS]
 

@@ -159,19 +159,6 @@ class ArcFlowModel:
 
                 from_node = info_obj[0]
 
-        """
-        if data.VERBOSE:
-            self.model.printAttr('X')
-            print(f'Fuel costs: {fuel_costs}')
-            print()
-            print()
-            print(f'Charter costs: {charter_cost}')
-            print(f'Arc costs: {arc_costs}')
-            print(f'Penalty costs: {self.penalty_costs}')
-            print(f'Postponed orders: {postponed_orders}')
-            print(f'Charter costs: {charter_cost}')
-        """
-
         post.save_results(voyages=voyages,
                           postponed_orders=postponed_orders,
                           serviced_orders=serviced_orders,

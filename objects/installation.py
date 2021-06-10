@@ -1,12 +1,6 @@
 class Installation:
 
     def __init__(self, index, name, opening_hour, closing_hour, latitude, longitude):
-        """
-        :param index: Unique identifier for the installation (starting at 0 for depot).
-        :param name: Shortened name of the installation.
-        :param opening_hour: Hour (0-24) that installation opens for service.
-        :param closing_hour: Hour (0-24) that installation closes.
-        """
         self.index = index
         self.name = name
         self.opening_hour = opening_hour
